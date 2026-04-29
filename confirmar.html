@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convite Especial</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+  }
+
+  .container {
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #0ff;
+    background: rgba(0,0,0,0.8);
+  }
+
+  h1 {
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px #0ff;
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+
+  button {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .yes {
+    background: linear-gradient(90deg, #00f, #0ff);
+    color: #fff;
+  }
+
+  .no {
+    background: linear-gradient(90deg, #ff004c, #ff4c4c);
+    color: #fff;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>🎉 BADAY DO DAS PATY E DO JAPA 🎉</h1>
+  <p>Confirme sua presença abaixo</p>
+
+  <input type="text" id="nome" placeholder="Seu nome">
+
+  <button class="yes" onclick="confirmar(true)">✅ Vou comparecer</button>
+  <button class="no" onclick="confirmar(false)">❌ Não vou</button>
+</div>
+
+<script>
+  function confirmar(vai) {
+    const nome = document.getElementById('nome').value || 'Alguém';
+    const numero = "553899651059"; // Ex: 5538999999999
+
+    let mensagem;
+
+    if (vai) {
+      mensagem = `Eu, ${nome}, vou comparecer na festa 🔥`;
+    } else {
+      mensagem = `Eu, ${nome}, não vou conseguir ir 😕`;
+    }
+
+    const msgFormatada = encodeURIComponent(mensagem);
+    window.location.href = `https://wa.me/${numero}?text=${msgFormatada}`;
+  }
+</script>
+
+</body>
+</html>
